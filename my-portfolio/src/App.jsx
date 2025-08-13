@@ -77,7 +77,7 @@ export default function Portfolio() {
       </header>
 
 
-      <main className="w-full mx-auto px-12 py-12">
+      <main className="w-full mx-auto sm:px-12 sm:py-12">
         {/* Hero */}
 
 
