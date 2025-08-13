@@ -88,7 +88,7 @@ function TimelineItem({ item, index }) {
 function ContactCard() {
     return (
         <div className='flex flex-col w-full justify-center items-center'>
-            <div id='contact' className="bg-gradient-to-br w-[200px] xs:w-[350px] sm:w-full from-gray-800/60 to-gray-900/60 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-white/30">
+            <div id='contact' className="bg-gradient-to-br w-[250px] xs:w-[350px] sm:w-full from-gray-800/60 to-gray-900/60 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-white/30">
                 <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-3 sm:mb-4 shadow-lg">
                         <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -171,7 +171,7 @@ function App() {
                     <div className="lg:col-span-2 space-y-6 sm:space-y-8 lg:space-y-12">
                         {/* About Text */}
                         <div className='flex flex-col w-full justify-center items-center'>
-                            <div className="bg-gradient-to-b w-[220px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
+                            <div className="bg-gradient-to-b w-[250px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
                                 <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 flex items-center gap-2 sm:gap-3">
                                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                                         <span className="text-white text-xs sm:text-sm font-bold">👨‍💻</span>
@@ -185,7 +185,7 @@ function App() {
                         </div>
                         {/* Experience Timeline */}
                         <div className='flex flex-col w-full justify-center items-center'>
-                        <div className="bg-gradient-to-br  w-[220px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
+                        <div className="bg-gradient-to-br  w-[250px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
                             <h4 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
                                 <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
                                     <Calendar className="w-4 h-4 text-white" />
