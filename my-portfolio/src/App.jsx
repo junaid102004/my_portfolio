@@ -119,64 +119,90 @@ export default function Portfolio() {
 
 
         {/* Projects */}
-        <section id="projects" className=" mt-[120px]  md:mt-16 max-w-6xl mx-auto px-4">
+        <section id="projects" className="mt-[120px] md:mt-16 max-w-6xl mx-auto px-4">
           {/* Gradient Heading */}
           <h3 className="text-4xl font-extrabold text-center mb-12 pb-2 bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
             Latest Works
           </h3>
 
           <div className="relative md:before:absolute md:before:left-1/2 md:before:top-0 md:before:h-full md:before:w-[3px] md:before:bg-gradient-to-b md:before:from-pink-500 md:before:via-purple-500 sm:before:to-blue-500 sm:before:-translate-x-1/2">
-            {data.projects.map((p, index) => (
-              <div
-                key={p.id}
-                className="flex flex-col md:flex-row items-center md:items-start mb-16 relative"
-              >
-                {/* Left side - Image */}
+            {data.projects.map((p, index) => {
+              const gradients = [
+                "from-pink-500 via-red-500 to-yellow-500",
+                "from-purple-500 via-blue-500 to-teal-500",
+                "from-green-500 via-lime-500 to-yellow-500",
+                "from-indigo-500 via-purple-500 to-pink-500",
+                "from-orange-500 via-pink-500 to-red-500",
+              ];
+              const gradient = gradients[index % gradients.length];
+
+              return (
                 <div
-                  className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-10"
-                    }`}
+                  key={p.id}
+                  className="flex flex-col md:flex-row items-center md:items-start mb-16 relative"
                 >
-                  <div className="rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 border border-white/10">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      className="object-cover w-full max-h-60 hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.currentTarget.src = "/projects/placeholder.png";
-                      }}
-                    />
+                  {/* Left side - Image */}
+                  <div
+  className={`w-full md:w-1/2 ${
+    index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-10"
+  }`}
+>
+  {/* Add group here so children can react to hover */}
+  <div className="relative group hover:scale-105 rounded-lg transition-transform duration-300">
+    {/* Gradient shadow layer */}
+    <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 blur-lg opacity-70"></div>
+
+    {/* Span on top, only visible on hover */}
+    <span className="absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-[#b89142] left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex">
+      Sagrada Madre
+    </span>
+
+    {/* Image on top of gradient but below span */}
+    <img
+      src={p.img}
+      alt={p.title}
+      className="relative z-10 object-cover w-full max-h-60 rounded-lg"
+      onError={(e) => {
+        e.currentTarget.src = "/projects/placeholder.png";
+      }}
+    />
+  </div>
+</div>
+
+
+
+
+                  {/* Connector circle on timeline (desktop only) */}
+                  <div className="hidden md:block absolute left-1/2 top-10 -translate-x-1/2 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full w-5 h-5 z-10 border-2 border-gray-900"></div>
+
+                  {/* Right side - Details */}
+                  <div
+                    className={`w-full md:w-1/2 mt-6 md:mt-0 text-center md:text-left ${index % 2 === 0
+                      ? "md:pl-10"
+                      : "md:order-1 md:pr-10"
+                      }`}
+                  >
+                    <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+                      {p.title}
+                    </h4>
+                    <p className="mt-2 text-gray-300">{p.desc}</p>
+                    <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                      {p.tech.map((t) => (
+                        <span
+                          key={t}
+                          className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-gray-600 text-gray-200"
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* Connector circle on timeline (desktop only) */}
-                <div className="hidden md:block absolute left-1/2 top-10 -translate-x-1/2 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full w-5 h-5 z-10 border-2 border-gray-900"></div>
-
-                {/* Right side - Details */}
-                <div
-                  className={`w-full md:w-1/2 mt-6 md:mt-0 text-center md:text-left ${index % 2 === 0
-                    ? "md:pl-10"
-                    : "md:order-1 md:pr-10"
-                    }`}
-                >
-                  <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                    {p.title}
-                  </h4>
-                  <p className="mt-2 text-gray-300">{p.desc}</p>
-                  <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                    {p.tech.map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-gray-600 text-gray-200"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
+
 
 
 
