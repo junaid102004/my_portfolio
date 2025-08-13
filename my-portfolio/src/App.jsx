@@ -6,6 +6,8 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import img1 from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import Contact from './components/Contact';
 import bgImage from "./uploads/photo-1623479322729-28b25c16b011.avif";
+import MatterBackground from './components/ui/MatterBackground.jsx';
+// import Matter from 'matter-js';
 const data = {
   name: "Junaid Khan",
   logo: "JK",
@@ -84,15 +86,14 @@ export default function Portfolio() {
 
         <section
           className="relative grid h-screen md:grid-cols-2 gap-8 items-center p-4 bg-cover bg-center"
-          style={{ backgroundImage: `url(${bgImage})`, backgroundAttachment: "fixed" }}
         >
-          {/* Overlay */}
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40"></div>
+          {/* Background Particles */}
+          <div className="absolute inset-0 z-0">
+            <MatterBackground />
+          </div>
 
-
-          {/* Content */}
-          <div className="relative md:col-span-2 mt-10 z-10 md:px-[80px]  " >
+          {/* Hero Content */}
+          <div className="relative md:col-span-2 mt-10 z-10 md:px-[80px]">
             <h2 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
@@ -100,12 +101,10 @@ export default function Portfolio() {
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
-                // href={data.resume}
-                // download
-                href='#contact'
+                href="#contact"
                 className="inline-block bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-5 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105"
               >
-               Contact Me
+                Contact Me
               </a>
               <a
                 href="#projects"
@@ -155,8 +154,8 @@ export default function Portfolio() {
                 {/* Right side - Details */}
                 <div
                   className={`w-full md:w-1/2 mt-6 md:mt-0 text-center md:text-left ${index % 2 === 0
-                      ? "md:pl-10"
-                      : "md:order-1 md:pr-10"
+                    ? "md:pl-10"
+                    : "md:order-1 md:pr-10"
                     }`}
                 >
                   <h4 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
@@ -182,11 +181,11 @@ export default function Portfolio() {
 
 
         {/* About / Experience */}
-      <Contact/>
+        <Contact />
 
 
         {/* Contact Form */}
-        
+
 
         {/* Footer */}
         <footer className="mt-16 py-6 text-center text-sm text-gray-500 border-t border-gray-800">
