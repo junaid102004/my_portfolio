@@ -17,3 +17,13 @@
   .custom-swiper .swiper-pagination {
     margin-top: 20px; /* increase space between card and dots */
   }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: black; /* optional */
+  }
+  #root {
+    margin: 0;
+    padding: 0;
+  }
+  

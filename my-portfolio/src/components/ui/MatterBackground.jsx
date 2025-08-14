@@ -11,18 +11,21 @@ export default function MatterBackground() {
 
   useEffect(() => {
     const Engine = Matter.Engine;
-    const Render = Matter.Render;
+    const Events = Matter.Events;
     const Runner = Matter.Runner;
+    const Render = Matter.Render;
     const World = Matter.World;
-    const Bodies = Matter.Bodies;
-    const Common = Matter.Common;
     const Body = Matter.Body;
     const Mouse = Matter.Mouse;
-    const Events = Matter.Events;
+    const Common = Matter.Common;
+    const Bodies = Matter.Bodies;
 
     if (!sceneRef.current) return;
 
-    const { width, height } = sceneRef.current.getBoundingClientRect();
+    const dimensions = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
 
     const engine = Engine.create();
     engine.world.gravity.y = 0;
@@ -33,22 +36,28 @@ export default function MatterBackground() {
       element: sceneRef.current,
       engine: engine,
       options: {
-        width,
-        height,
+        width: dimensions.width,
+        height: dimensions.height,
         wireframes: false,
         background: "transparent",
       },
     });
 
     const runner = Runner.create();
+    const world = engine.world;
+    world.gravity.scale = 0;
 
     const attractiveBody = Bodies.circle(
-      width / 2,
-      height / 2,
-      Math.max(width / 25, height / 25) / 2,
+      dimensions.width / 2,
+      dimensions.height / 2,
+      Math.max(dimensions.width / 25, dimensions.height / 25) / 2,
       {
+        render: {
+          fillStyle: "#000",
+          strokeStyle: "#000",
+          lineWidth: 0,
+        },
         isStatic: true,
-        render: { fillStyle: "#000" },
         plugin: {
           attractors: [
             (bodyA, bodyB) => ({
@@ -60,54 +69,70 @@ export default function MatterBackground() {
       }
     );
 
-    World.add(engine.world, attractiveBody);
+    World.add(world, attractiveBody);
 
-    for (let i = 0; i < 40; i++) {
-      const x = Common.random(0, width);
-      const y = Common.random(0, height);
-      const size = Common.random(10, 40);
+    for (let i = 0; i < 60; i++) {
+      const x = Common.random(0, render.options.width);
+      const y = Common.random(0, render.options.height);
+      const s =
+        Common.random() > 0.6 ? Common.random(10, 80) : Common.random(4, 60);
+      const polygonNumber = Common.random(3, 6);
 
+      const body = Bodies.polygon(x, y, polygonNumber, s, {
+        mass: s / 20,
+        friction: 0,
+        frictionAir: 0.02,
+        angle: Math.round(Math.random() * 360),
+        render: {
+          fillStyle: "#222222",
+          strokeStyle: "#000000",
+          lineWidth: 2,
+        },
+      });
+      World.add(world, body);
+
+      let r = Common.random(0, 1);
       World.add(
-        engine.world,
-        Bodies.polygon(x, y, Common.random(3, 6), size, {
-          mass: size / 20,
+        world,
+        Bodies.circle(x, y, Common.random(2, 8), {
+          mass: 0.1,
           friction: 0,
-          frictionAir: 0.02,
-          render: { fillStyle: "#222", strokeStyle: "#000", lineWidth: 1 },
+          frictionAir: 0.01,
+          render: {
+            fillStyle: r > 0.3 ? "#27292d" : "#444444",
+            strokeStyle: "#000000",
+            lineWidth: 2,
+          },
         })
       );
-    }
 
-    const numParticles = 100;
-    for (let i = 0; i < numParticles; i++) {
-      const x = Common.random(0, width);
-      const y = Common.random(0, height);
-      const size = Common.random(14, 25);
-      const isCircle = Math.random() > 0.5;
+      World.add(
+        world,
+        Bodies.circle(x, y, Common.random(2, 20), {
+          mass: 6,
+          friction: 0,
+          frictionAir: 0,
+          render: {
+            fillStyle: r > 0.3 ? "#334443" : "#222222",
+            strokeStyle: "#111111",
+            lineWidth: 4,
+          },
+        })
+      );
 
-      const shape = isCircle
-        ? Bodies.circle(x, y, size / 2, {
-            mass: size / 20,
-            friction: 0,
-            frictionAir: 0.02,
-            render: {
-              fillStyle: "#444",
-              strokeStyle: "#000",
-              lineWidth: 1,
-            },
-          })
-        : Bodies.polygon(x, y, Common.random(3, 6), size, {
-            mass: size / 20,
-            friction: 0,
-            frictionAir: 0.02,
-            render: {
-              fillStyle: "#222",
-              strokeStyle: "#000",
-              lineWidth: 1,
-            },
-          });
-
-      World.add(engine.world, shape);
+      World.add(
+        world,
+        Bodies.circle(x, y, Common.random(2, 30), {
+          mass: 0.2,
+          friction: 0.6,
+          frictionAir: 0.8,
+          render: {
+            fillStyle: "#191919",
+            strokeStyle: "#111111",
+            lineWidth: 3,
+          },
+        })
+      );
     }
 
     const mouse = Mouse.create(render.canvas);
@@ -122,13 +147,11 @@ export default function MatterBackground() {
     Render.run(render);
     Runner.run(runner, engine);
 
-    // Handle resize
     const handleResize = () => {
-      if (!sceneRef.current) return;
-      const { width, height } = sceneRef.current.getBoundingClientRect();
-      render.canvas.width = width;
-      render.canvas.height = height;
+      render.canvas.width = window.innerWidth;
+      render.canvas.height = window.innerHeight;
     };
+
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -147,10 +170,10 @@ export default function MatterBackground() {
       ref={sceneRef}
       style={{
         position: "absolute",
-        top: 20,
+        top: 0,
         left: 0,
-        right: 0,
-        bottom: 0,
+        width: "100%",
+        height: "100%",
         zIndex: -1,
       }}
     />

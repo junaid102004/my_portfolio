@@ -8,8 +8,8 @@ import "swiper/css/pagination";
 const testimonials = [
   {
     text: `“Junaid is an exceptionally talented and committed individual. His expertise in web development is outstanding, and he consistently delivers more than expected. His dedication, attention to detail, and problem-solving skills are truly admirable. Working with him has been a pleasure, and I look forward to seeing all his great future projects!”`,
-    name: "Parvez Gaps",
-    role: "CEO, Gaps Technologies",
+    name: "Mohammed Parvez ",
+    role: "Director, GAPS Technologies Pvt. Ltd.",
   },
   {
     text: `“Junaid’s technical skills and creative vision are top-notch. He brings innovative solutions to the table and executes them flawlessly. A true professional who makes collaboration easy and enjoyable.”`,
@@ -19,7 +19,7 @@ const testimonials = [
   {
     text: `“Junaid is not just skilled — he’s exceptional. His ability to understand complex requirements and deliver high-quality work quickly sets him apart. I highly recommend him to anyone seeking top-tier results.”`,
     name: "Nabil S",
-    role: "Orient Finance, Dubai",
+    role: "Manager, Orient Finance",
   },
 ];
 
