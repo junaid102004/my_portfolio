@@ -5,7 +5,6 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 // import { faWhatsApp } from "@fortawesome/free-solid-svg-icons";
 import img1 from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import img2 from "./uploads/mernapp.png";
-import img3 from "./uploads/Group 7829.png"
 import Contact from './components/Contact';
 import bgImage from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import MatterBackground from './components/ui/MatterBackground.jsx';
@@ -44,7 +43,7 @@ const data = {
       desc: "Real-time task manager with task assignment, live updates via WebSockets, and a Laravel PHP backend for API handling.",
       tech: ["React", "Express", "Socket.io", "Laravel", "PHP"],
       tools: ["VS Code", "Git", "MySQL", "Postman"],
-      img: img3,
+      img: img1,
       link: "https://example.com/tasks",
       textColor: "text-lime-400", // heading text color
       spanTitle: "Sagrada Madre",
@@ -52,7 +51,7 @@ const data = {
       lineColor: "#f44336"        // timeline line color
     }
   ]
-
+  
 };
 
 export default function Portfolio() {
@@ -126,99 +125,94 @@ export default function Portfolio() {
 
         {/* Projects */}
         <section id="projects" className="mt-[120px] md:mt-16 max-w-6xl mx-auto px-4">
-          {/* Gradient Heading */}
-          <h3 className="text-4xl font-extrabold text-center mb-12 pb-2 bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
-            Latest Works
-          </h3>
+      {/* Gradient Heading */}
+      <h3 className="text-4xl font-extrabold text-center mb-12 pb-2 bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
+        Latest Works
+      </h3>
 
-          <div className="relative md:before:absolute md:before:left-1/2 md:before:top-0 md:before:h-full md:before:w-[3px] md:before:bg-gradient-to-b md:before:from-pink-500 md:before:via-purple-500 md:before:to-blue-500 md:before:-translate-x-1/2">
-            {data.projects.map((p, index) => {
-              const gradients = [
-                "from-pink-500 via-red-500 to-yellow-500",
-                "from-purple-500 via-blue-500 to-teal-500",
-                "from-green-500 via-lime-500 to-yellow-500",
-                "from-indigo-500 via-purple-500 to-pink-500",
-                "from-orange-500 via-pink-500 to-red-500",
-              ];
-              const gradient = gradients[index % gradients.length];
+      <div className="relative md:before:absolute md:before:left-1/2 md:before:top-0 md:before:h-full md:before:w-[3px] md:before:bg-gradient-to-b md:before:from-pink-500 md:before:via-purple-500 sm:before:to-blue-500 sm:before:-translate-x-1/2">
+        {data.projects.map((p, index) => {
+          const gradients = [
+            "from-pink-500 via-red-500 to-yellow-500",
+            "from-purple-500 via-blue-500 to-teal-500",
+            "from-green-500 via-lime-500 to-yellow-500",
+            "from-indigo-500 via-purple-500 to-pink-500",
+            "from-orange-500 via-pink-500 to-red-500"
+          ];
+          const gradient = gradients[index % gradients.length];
 
-              return (
-                <div
-                  key={p.id}
-                  className={`flex flex-col md:flex-row items-center md:items-start ${p.id === 1 ? "mt-[90px]" : "mt-[150px]"
-                    } mb-16 relative`}
-                >
-                  {/* Left side - Image */}
-                  <div
-                    className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-[100px]"
-                      }`}
+          return (
+            <div
+              key={p.id}
+              className={`flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start ${p.id === 1 ? "mt-[90px]" : "mt-[150px]"}  mb-16 relative`}
+            >
+              {/* Left side - Image */}
+              {/* <div class="h-[1px] left-1/4 right-1/2 bg-[#b89142] absolute top-1/2 hidden sm:block"></div> */}
+              <div className={`w-full flex justify-center md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-[100px]"}`}>
+                <div className="relative group hover:scale-105 rounded-lg transition-transform duration-300 w-[450px]">
+                  {/* Gradient shadow layer */}
+                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 blur-lg opacity-70"></div>
+
+                  {/* Span */}
+                  <span
+                    className={`absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex`}
                   >
-                    <div className="relative group hover:scale-105 rounded-lg transition-transform duration-300 w-[450px]">
-                      {/* Gradient shadow layer */}
-                      <div
-                        className={`absolute inset-0 rounded-lg bg-gradient-to-r ${gradient} blur-lg opacity-70`}
-                      ></div>
+                    {p?.spanTitle}
+                  </span>
 
-                      {/* Span */}
-                      <span
-                        className={`absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex`}
-                      >
-                        {p?.spanTitle}
-                      </span>
-
-                      {/* Image */}
-                      <img
-                        src={p.img}
-                        alt={p.title}
-                        className="relative z-10 object-cover w-full max-h-60 rounded-lg"
-                        onError={(e) => {
-                          e.currentTarget.src = "/projects/placeholder.png";
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  {/* Connector circle */}
-                  <div className="hidden md:block absolute left-1/2 top-30 -translate-x-1/2 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full w-5 h-5 z-10 border-2 border-gray-900"></div>
-
-                  {/* Right side - Details */}
-                  <div
-                    className={`w-full md:w-1/2 mt-6 md:mt-0 text-center md:text-left ${index % 2 === 0 ? "md:pl-10" : "md:order-1 md:pr-10"
-                      }`}
-                  >
-                    <h4 className={`text-2xl font-bold ${p.textColor}`}>{p.title}</h4>
-                    <p className="mt-2 text-gray-300">{p.desc}</p>
-
-                    {/* Tech */}
-                    <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                      {p.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-gray-600 text-gray-200"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-
-                    {/* Tools */}
-                    <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
-                      {p.tools.map((tool) => (
-                        <span
-                          key={tool}
-                          className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 text-gray-300"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Image */}
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    className="relative z-10 object-cover w-full max-h-60 rounded-lg"
+                    onError={(e) => {
+                      e.currentTarget.src = "/projects/placeholder.png";
+                    }}
+                  />
                 </div>
-              );
-            })}
-          </div>
+              </div>
 
-        </section>
+              {/* Connector circle */}
+              <div className="hidden md:block absolute left-1/2 top-30 -translate-x-1/2 bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500 rounded-full w-5 h-5 z-10 border-2 border-gray-900"></div>
+
+              {/* Right side - Details */}
+              <div
+                className={`w-full md:w-1/2 mt-6 md:mt-0 text-center md:text-left ${index % 2 === 0 ? "md:pl-10" : "md:order-1 md:pr-10"}`}
+              >
+                <h4 className={`text-2xl font-bold ${p.textColor}`}>
+                  {p.title}
+                </h4>
+                <p className="mt-2 text-gray-300">{p.desc}</p>
+
+                {/* Tech */}
+                <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                  {p.tech.map((t) => (
+                    <span
+                      key={t}
+                      className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-700 to-gray-900 border border-gray-600 text-gray-200"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Tools */}
+                <div className="mt-4 flex flex-wrap gap-2 justify-center md:justify-start">
+                  {p.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="text-xs px-3 py-1 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border border-gray-700 text-gray-300"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
 
 
 
