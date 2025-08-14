@@ -74,7 +74,7 @@ export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 antialiased">
       {/* Header */}
-      <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
+      <header className="absolute top-0 left-0 w-full z-80 bg-transparent">
         <div className="max-w-6xl md:ml-[80px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
           <div className='w-[50%] ml-3 md:ml-0  sm:w-auto'>
             <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
@@ -114,12 +114,12 @@ export default function Portfolio() {
           className="relative  grid h-screen md:grid-cols-2 gap-8 items-center p-4 bg-cover bg-center"
         >
           {/* Background Particles */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-50">
             <MatterBackground />
           </div>
 
           {/* Hero Content */}
-          <div className="relative md:col-span-2 pr-5 sm:pr-0 z-10 md:px-[80px]">
+          <div className="relative md:col-span-2 pr-5 sm:pr-0 z-70 md:px-[80px]">
             <h2 className="sm:text-5xl text-[30px] xs:text-[35px] md:text-7xl sm:mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
@@ -193,10 +193,18 @@ export default function Portfolio() {
 
         {/* Projects */}
         <section id="projects" className="mt-[120px] md:mt-16 max-w-6xl mx-auto px-4">
+          <div className="rounded-lg w-full flex items-center justify-center">
+            <h3
+              className="text-2xl font-extrabold text-center mb-12 pb-2 text-white px-6 py-3 rounded-lg shadow-lg inline-block"
+              style={{
+                background: "linear-gradient(90deg, rgb(189, 52, 254), rgb(255, 0, 128))"
+              }}
+            >
+              Latest Works
+            </h3>
+          </div>
+
           {/* Gradient Heading */}
-          <h3 className="text-4xl font-extrabold text-center mb-12 pb-2 bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent">
-            Latest Works
-          </h3>
 
           <div className="relative md:before:absolute md:before:left-1/2 md:before:top-0 md:before:h-full md:before:w-[3px] md:before:bg-gradient-to-b md:before:from-pink-500 md:before:via-purple-500 sm:before:to-blue-500 sm:before:-translate-x-1/2">
             {data.projects.map((p, index) => {
@@ -284,18 +292,69 @@ export default function Portfolio() {
 
 
 
-
+        <Testimonials />
         {/* About / Experience */}
         <Contact />
-        <Testimonials />
+
 
         {/* Contact Form */}
 
 
         {/* Footer */}
-        <footer className="mt-16 py-6 text-center text-sm text-gray-500 border-t border-gray-800">
-          © {new Date().getFullYear()} {data.name} — Built with React + Tailwind (Dark Mode)
+        <footer className="mt-16 py-6 border-t border-gray-800 bg-gray-900/50 backdrop-blur-sm">
+          <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 px-4">
+            {/* Footer Text */}
+            <p className="text-sm text-gray-400 tracking-wide text-center sm:text-left">
+              © {new Date().getFullYear()} {data.name}. All rights reserved.
+            </p>
+
+            {/* Social Links */}
+            <div className="flex gap-4 text-gray-400">
+              <a
+                href={socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition-colors"
+              >
+                <FaLinkedin size={22} />
+              </a>
+              <a
+                href={socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-200 transition-colors"
+              >
+                <FaGithub size={22} />
+              </a>
+              <a
+                href={socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-red-500 transition-colors"
+              >
+                <FaYoutube size={22} />
+              </a>
+              <a
+                href={socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-500 transition-colors"
+              >
+                <FaInstagram size={22} />
+              </a>
+              <a
+                href={socialLinks.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-sky-400 transition-colors"
+              >
+                <BsTwitterX size={22} />
+              </a>
+            </div>
+          </div>
         </footer>
+
+
       </main>
     </div>
   );

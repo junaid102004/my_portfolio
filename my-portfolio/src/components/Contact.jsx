@@ -12,27 +12,31 @@ const data = {
 
 const timelineItems = [
     {
-        year: "2024",
-        role: "Senior Frontend Developer",
-        company: "TechCorp Inc.",
-        description: "Led frontend architecture decisions, mentored junior developers, and improved application performance by 40%. Implemented modern React patterns and established component library standards.",
-        achievements: ["40% performance improvement", "Component library creation", "Team mentorship"]
+        year: "Dec 2024 – Mar 2025",
+        role: "MERN Stack Developer",
+        company: "Adiyogi Technosoft",
+        description: "Developed full-stack web applications using the MERN stack with a focus on scalable backend APIs and highly interactive frontends. Integrated third-party services and implemented authentication/authorization flows. Collaborated with UI/UX designers to deliver polished interfaces.",
+        achievements: [
+            "Delivered 3+ MERN projects from concept to deployment",
+            "Integrated secure authentication using JWT",
+            "Optimized API response times by ~25%",
+            "Implemented reusable React component architecture"
+        ]
     },
     {
-        year: "2023",
-        role: "Frontend Developer",
-        company: "StartupXYZ",
-        description: "Built responsive web applications using React and TypeScript. Collaborated with design teams to implement pixel-perfect UIs and optimized bundle sizes by 30%.",
-        achievements: ["30% bundle size reduction", "Pixel-perfect implementations", "Cross-team collaboration"]
-    },
-    {
-        year: "2022",
-        role: "Web Developer Intern",
-        company: "Digital Agency",
-        description: "Worked on client projects involving REST APIs, authentication systems, and interactive dashboards. Gained experience with modern development workflows and agile methodologies.",
-        achievements: ["REST API integration", "Authentication systems", "Agile development"]
+        year: "Dec 2023 – Dec 2024",
+        role: "Full Stack Developer",
+        company: "Gaps Technologies Pvt. Ltd.",
+        description: "Worked on enterprise-level applications using Laravel PHP for backend development and React with TailwindCSS for frontend UI. Designed REST APIs, managed databases, and implemented efficient data flows. Collaborated with cross-functional teams to meet tight deadlines.",
+        achievements: [
+            "Built responsive UIs with React & TailwindCSS",
+            "Developed and deployed Laravel REST APIs",
+            "Integrated payment gateways & role-based access control",
+            "Improved backend query performance by 30%"
+        ]
     }
 ];
+
 
 function TimelineItem({ item, index }) {
     const [isVisible, setIsVisible] = useState(false);
