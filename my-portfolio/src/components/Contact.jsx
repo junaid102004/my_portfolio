@@ -84,11 +84,12 @@ function TimelineItem({ item, index }) {
         </div>
     );
 }
-
 function ContactCard() {
     return (
         <div className='flex flex-col w-full justify-center items-center'>
             <div id='contact' className="bg-gradient-to-br w-[300px] xs:w-[350px] sm:w-full from-gray-800/60 to-gray-900/60 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-white/30">
+                
+                {/* Header */}
                 <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-3 sm:mb-4 shadow-lg">
                         <Mail className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
@@ -97,10 +98,15 @@ function ContactCard() {
                     <p className="text-gray-400 text-xs sm:text-sm">Ready to collaborate on your next project</p>
                 </div>
 
+                {/* Contact Methods */}
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                    
+                    {/* Email */}
                     <a
                         href={`mailto:${data.email}`}
-                        className="group flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10 hover:border-purple-500/50 hover:bg-gray-800/80 transition-all duration-300"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10 hover:border-purple-500/50 hover:bg-gray-800/80 transition-all duration-300 cursor-pointer"
                     >
                         <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-lg group-hover:from-purple-500/30 group-hover:to-blue-500/30 transition-all">
                             <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-purple-400" />
@@ -114,7 +120,11 @@ function ContactCard() {
                         <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 group-hover:text-purple-400 transition-colors" />
                     </a>
 
-                    <div className="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10">
+                    {/* Phone */}
+                    <a
+                        href={`tel:7877227800`}
+                        className="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10 hover:border-green-500/50 hover:bg-gray-800/80 transition-all duration-300 cursor-pointer"
+                    >
                         <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-lg">
                             <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
                         </div>
@@ -122,9 +132,15 @@ function ContactCard() {
                             <p className="text-xs text-gray-400 uppercase tracking-wide">Phone</p>
                             <p className="text-sm sm:text-base text-white font-medium">{data.phone}</p>
                         </div>
-                    </div>
+                    </a>
 
-                    <div className="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10">
+                    {/* Location */}
+                    <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.location)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-3 sm:gap-4 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gray-800/50 border border-white/10 hover:border-orange-500/50 hover:bg-gray-800/80 transition-all duration-300 cursor-pointer"
+                    >
                         <div className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-lg">
                             <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                         </div>
@@ -132,9 +148,10 @@ function ContactCard() {
                             <p className="text-xs text-gray-400 uppercase tracking-wide">Location</p>
                             <p className="text-sm sm:text-base text-white font-medium">{data.location}</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
 
+                {/* Resume Button */}
                 <a
                     href={data.resume}
                     download
@@ -145,7 +162,6 @@ function ContactCard() {
                 </a>
             </div>
         </div>
-
     );
 }
 

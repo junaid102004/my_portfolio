@@ -12,6 +12,12 @@ import bgImage from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import MatterBackground from './components/ui/MatterBackground.jsx';
 import Testimonials from './components/Testimonials.jsx';
 import logoImg from "./uploads/WhatsApp Image 2025-08-14 at 13.03.51.png";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { BsTwitterX } from "react-icons/bs";
+import { FaYoutube } from "react-icons/fa";
+
 // import Matter from 'matter-js';
 const data = {
   name: "Junaid Khan",
@@ -56,6 +62,13 @@ const data = {
   ]
 
 };
+const socialLinks = {
+  linkedin: "https://www.linkedin.com/in/junaid-khan-a3b538286/",
+  github: "https://github.com/junaid102004",
+  youtube: "https://youtube.com", // Replace with your actual channel link
+  instagram: "https://instagram.com", // Replace with your actual handle
+  twitter: "https://twitter.com", // Replace with your actual handle
+};
 
 export default function Portfolio() {
   return (
@@ -64,16 +77,30 @@ export default function Portfolio() {
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="max-w-6xl md:ml-[80px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
           <div className='w-[50%] ml-3 md:ml-0  sm:w-auto'>
-           <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
+            <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
             {/* <p className="text-sm hidden md:block text-gray-400">{data.title} — {data.location}</p> */}
           </div>
-          <nav className="sm:space-x-4 space-x-2 flex  items-center justify-center text-sm w-[50%] sm:w-auto">
+          <nav className="sm:space-x-4 space-x-2 flex items-center justify-center text-sm w-[50%] sm:w-auto">
             <a href="#projects" className="hover:text-red-400 text-[18px]">Projects</a>
-            <a href="#about" >  <FaWhatsapp size={30}/></a>
-            <a href="#contact" className="hover:text-red-400">
-              <FaPhone size={25}  />
+
+            {/* WhatsApp link */}
+            <a
+              href="https://wa.me/917877227800" // "91" is country code for India
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaWhatsapp size={30} />
+            </a>
+
+            {/* Phone call link */}
+            <a
+              href="tel:+917877722780"
+              className="hover:text-red-400"
+            >
+              <FaPhone size={25} />
             </a>
           </nav>
+
         </div>
       </header>
 
@@ -92,27 +119,74 @@ export default function Portfolio() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative md:col-span-2  z-10 md:px-[80px]">
-            <h2 className="text-5xl md:text-7xl mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
+          <div className="relative md:col-span-2 pr-5 sm:pr-0 z-10 md:px-[80px]">
+            <h2 className="sm:text-5xl text-[30px] md:text-7xl mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
-            <p className="mt-4 text-lg text-gray-300 max-w-xl">{data.about}</p>
+            <p className="mt-4 sm:text-lg text-[14px] text-gray-300 max-w-xl">{data.about}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
                 href="#contact"
-                className="inline-block bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white px-5 py-3 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                className="inline-block bg-gradient-to-r from-pink-500 to-red-500 hover:from-pink-600 hover:to-red-600 text-white sm:px-5 sm:py-3   px-2 py-2  rounded-lg shadow-lg transition-transform transform hover:scale-105"
               >
                 Contact Me
               </a>
               <a
                 href="#projects"
-                className="inline-block border border-gray-500 hover:border-gray-300 px-5 py-3 rounded-lg transition-colors"
+                className="inline-block border border-gray-500 hover:border-gray-300 sm:px-5 sm:py-3   px-2 py-2 rounded-lg transition-colors"
               >
                 See Projects
               </a>
             </div>
           </div>
+
+
+          <div className="absolute right-2 top-[40%] sm:right-10 sm:top-[60%] flex flex-col gap-3 z-1000">
+            <a
+              href={socialLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <FaLinkedin size={30} />
+            </a>
+            <a
+              href={socialLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <FaGithub size={30} />
+            </a>
+            <a
+              href={socialLinks.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <FaYoutube size={30} />
+            </a>
+            <a
+              href={socialLinks.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <FaInstagram size={30} />
+            </a>
+            <a
+              href={socialLinks.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer"
+            >
+              <BsTwitterX size={30} />
+            </a>
+          </div>
+
+
+
         </section>
 
 
