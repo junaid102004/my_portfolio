@@ -120,7 +120,7 @@ export default function Portfolio() {
 
           {/* Hero Content */}
           <div className="relative md:col-span-2 pr-5 sm:pr-0 z-10 md:px-[80px]">
-            <h2 className="sm:text-5xl text-[30px] md:text-7xl mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="sm:text-5xl text-[30px] xs:text-[35px] md:text-7xl sm:mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
             <p className="mt-4 sm:text-lg text-[14px] text-gray-300 max-w-xl">{data.about}</p>
