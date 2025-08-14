@@ -10,11 +10,12 @@
   }
 
   html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #0f172a; /* same as bg-gray-950 */
-    overflow-x: hidden; /* avoid horizontal scrollbars */
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: #0f172a !important;
+    overflow-x: hidden !important;
   }
+  
   .custom-swiper .swiper-pagination {
     margin-top: 20px; /* increase space between card and dots */
   }

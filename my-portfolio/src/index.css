@@ -20,10 +20,9 @@
   html, body {
     margin: 0;
     padding: 0;
-    background: black; /* optional */
+    background-color: #0f172a; /* same as bg-gray-950 */
+    overflow-x: hidden; /* avoid horizontal scrollbars */
   }
-  #root {
-    margin: 0;
-    padding: 0;
+  .custom-swiper .swiper-pagination {
+    margin-top: 20px; /* increase space between card and dots */
   }
-  

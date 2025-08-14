@@ -62,8 +62,8 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-950 text-gray-100 antialiased">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
-        <div className="max-w-6xl md:ml-[120px]  mx-auto px-6 py-6 flex items-center justify-between">
-          <div className='w-[50%]  sm:w-auto'>
+        <div className="max-w-6xl md:ml-[80px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
+          <div className='w-[50%] ml-3 md:ml-0  sm:w-auto'>
            <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
             {/* <p className="text-sm hidden md:block text-gray-400">{data.title} — {data.location}</p> */}
           </div>
@@ -78,13 +78,13 @@ export default function Portfolio() {
       </header>
 
 
-      <main className="w-full mx-auto sm:px-12 sm:py-12">
+      <main className="w-full mx-auto ">
         {/* Hero */}
 
 
 
         <section
-          className="relative mt-10 grid h-screen md:grid-cols-2 gap-8 items-center p-4 bg-cover bg-center"
+          className="relative  grid h-screen md:grid-cols-2 gap-8 items-center p-4 bg-cover bg-center"
         >
           {/* Background Particles */}
           <div className="absolute inset-0 z-0">
@@ -92,8 +92,8 @@ export default function Portfolio() {
           </div>
 
           {/* Hero Content */}
-          <div className="relative md:col-span-2 mt-10 z-10 md:px-[80px]">
-            <h2 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
+          <div className="relative md:col-span-2  z-10 md:px-[80px]">
+            <h2 className="text-5xl md:text-7xl mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
             <p className="mt-4 text-lg text-gray-300 max-w-xl">{data.about}</p>
