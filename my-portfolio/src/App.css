@@ -15,3 +15,6 @@
     background-color: #0f172a; /* same as bg-gray-950 */
     overflow-x: hidden; /* avoid horizontal scrollbars */
   }
+  .custom-swiper .swiper-pagination {
+    margin-top: 20px; /* increase space between card and dots */
+  }
