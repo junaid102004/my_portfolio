@@ -128,7 +128,7 @@ export default function Portfolio() {
 
             {/* Phone call link */}
             <a
-              href="tel:+917877722780"
+              href="tel:+917877227800"
               className="hover:text-red-400"
             >
               <FaPhone size={25} />
