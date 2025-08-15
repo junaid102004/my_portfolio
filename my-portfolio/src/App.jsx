@@ -19,6 +19,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { BsTwitterX } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
+import { GoLinkExternal } from "react-icons/go";
 
 // import Matter from 'matter-js';
 const data = {
@@ -44,9 +45,10 @@ const data = {
       img: imgAdpostman, // replace with your imported image file
       link: "https://adpostman.adiyogitechnology.com/",
       textColor: "text-purple-500",
-      spanColor: "bg-purple-500",
+      spanColor: "bg-red-300",
       spanTitle: "MERN Listing Platform",
-      lineColor: "#9c27b0"
+      lineColor: "#9c27b0",
+      textColor: "#3A4E5F"
     },
     {
       id: 2,
@@ -59,7 +61,8 @@ const data = {
       textColor: "text-yellow-500",
       spanColor: "bg-yellow-500",
       spanTitle: "Real Estate Platform",
-      lineColor: "#ff9800"
+      lineColor: "#ff9800",
+      textColor: "#3A4E5F"
     },
     {
       id: 3,
@@ -70,9 +73,10 @@ const data = {
       img: imgSagrada, // replace with your imported image file
       link: "https://www.sagradamadre.net/",
       textColor: "text-green-500",
-      spanColor: "bg-green-500",
+      spanColor: "bg-rose-400",
       spanTitle: "E-commerce Website",
-      lineColor: "#4caf50"
+      lineColor: "#4caf50",
+      textColor: "#3A4E5F"
     },
     {
       id: 4,
@@ -85,10 +89,11 @@ const data = {
       textColor: "text-fuchsia-600", // heading text color
       spanColor: "bg-fuchsia-600",   // hover span background
       spanTitle: "MERN Ecommerce App",
-      lineColor: "#4caf50"           // timeline line color
+      lineColor: "#4caf50",
+      textColor: "#3A4E5F"          // timeline line color
     },
   ]
-  
+
 
 };
 const socialLinks = {
@@ -253,18 +258,19 @@ export default function Portfolio() {
                 >
                   {/* Left side - Image */}
                   {/* <div class="h-[1px] left-1/4 right-1/2 bg-[#b89142] absolute top-1/2 hidden sm:block"></div> */}
-                  <div className={`w-full flex justify-center md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-[100px]"}`}>
-                    <div className="relative group hover:scale-105 rounded-lg transition-transform duration-300 w-[450px]">
+                  <div className={`w-full  flex-col md:flex-row items-center flex justify-center md:w-1/2 ${index % 2 === 0 ? "md:pr-10" : "md:order-2 md:pl-[100px]"}`}>
+                    <div className="relative group hover:scale-105 rounded-lg transition-transform duration-300 w-[300px] md:w-[450px]">
                       {/* Gradient shadow layer */}
                       <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 blur-lg opacity-70"></div>
 
                       {/* Span */}
                       {/* Span */}
+
                       <a
                         href={p.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex cursor-pointer`}
+                        className={`absolute z-20 hidden md:flex opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex cursor-pointer`}
                       >
                         {p?.spanTitle}
                       </a>
@@ -278,6 +284,19 @@ export default function Portfolio() {
                           e.currentTarget.src = "/projects/placeholder.png";
                         }}
                       />
+
+                    </div>
+                    <div className={` z-300 flex md:hidden  mt-10 ${p.spanColor}  text-[${p.textColor}] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 cursor-pointer`}>
+
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+
+                      >
+                        {p?.spanTitle}
+                      </a>
+                      <GoLinkExternal />
                     </div>
                   </div>
 
