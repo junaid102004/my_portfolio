@@ -109,7 +109,7 @@ export default function Portfolio() {
             <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
             {/* <p className="text-sm hidden md:block text-gray-400">{data.title} — {data.location}</p> */}
           </div>
-          <nav className="sm:space-x-4 space-x-2 flex items-center justify-center text-sm w-[50%] sm:w-auto">
+          <nav className="sm:space-x-4 space-x-2 flex items-center justify-end pr-3 text-sm w-[50%] sm:w-auto">
             <a href="#projects" className="hover:text-red-400 text-[18px]">Projects</a>
 
             {/* WhatsApp link */}
@@ -152,7 +152,7 @@ export default function Portfolio() {
             <h2 className="sm:text-5xl text-[30px] xs:text-[35px] md:text-7xl sm:mt-[60px] md:mt-[100px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
-            <p className="mt-4 sm:text-lg md:text-[24px] text-[14px] text-gray-300 max-w-xl">{data.about}</p>
+            <p className="mt-4 sm:text-lg md:text-[24px] text-[14px] text-gray-300 max-w-xl pr-3">{data.about}</p>
 
             <div className="mt-6 flex flex-wrap gap-3">
               <a
