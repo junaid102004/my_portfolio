@@ -5,8 +5,10 @@ import { FaPhone } from "react-icons/fa6";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 // import { faWhatsApp } from "@fortawesome/free-solid-svg-icons";
 import { FaWhatsapp } from "react-icons/fa";
-import img1 from "./uploads/photo-1623479322729-28b25c16b011.avif";
-import img2 from "./uploads/mernapp.png";
+import imgAdpostman from "./uploads/Group 7829.png";
+import imgAurum from "./uploads/aurum-image.jpeg";
+import imgSagrada from "./uploads/SagradaImage.jpeg"
+import imgmern from "./uploads/mernapp.png"
 import Contact from './components/Contact';
 import bgImage from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import MatterBackground from './components/ui/MatterBackground.jsx';
@@ -35,31 +37,58 @@ const data = {
   projects: [
     {
       id: 1,
+      title: "AdPostman",
+      desc: "A listing platform created in MERN stack with over 50 pages of Figma designs. I developed the frontend and partially the backend using Next.js, Node.js, and Express, assisting in implementing advanced search, filtering, and user authentication.",
+      tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "TailwindCSS"],
+      tools: ["VS Code", "Git", "Figma", "Postman", "Cloudinary"],
+      img: imgAdpostman, // replace with your imported image file
+      link: "https://adpostman.adiyogitechnology.com/",
+      textColor: "text-purple-500",
+      spanColor: "bg-purple-500",
+      spanTitle: "MERN Listing Platform",
+      lineColor: "#9c27b0"
+    },
+    {
+      id: 2,
+      title: "Aurum Reality Nivesh",
+      desc: "A UI-intensive real estate platform built with Next.js and React, focused on showcasing premium property listings. I assisted in frontend development, creating responsive layouts, interactive components, and dynamic property filters.",
+      tech: ["Next.js", "React", "TailwindCSS", "JavaScript"],
+      tools: ["VS Code", "Git", "Figma", "Vercel"],
+      img: imgAurum, // replace with your imported image file
+      link: "https://medallionaurum.realtynivesh.com/",
+      textColor: "text-yellow-500",
+      spanColor: "bg-yellow-500",
+      spanTitle: "Real Estate Platform",
+      lineColor: "#ff9800"
+    },
+    {
+      id: 3,
+      title: "Sagrada Madre",
+      desc: "An e-commerce website built in Laravel. I assisted senior developers by working on backend payment integration and supporting frontend enhancements, ensuring smooth checkout and user experience.",
+      tech: ["Laravel", "PHP", "MySQL", "JavaScript", "TailwindCSS"],
+      tools: ["VS Code", "Git", "MySQL", "Postman"],
+      img: imgSagrada, // replace with your imported image file
+      link: "https://www.sagradamadre.net/",
+      textColor: "text-green-500",
+      spanColor: "bg-green-500",
+      spanTitle: "E-commerce Website",
+      lineColor: "#4caf50"
+    },
+    {
+      id: 4,
       title: "E-Commerce Practice Website",
       desc: "A MERN stack e-commerce app with Redux Toolkit, Stripe payments, and a responsive UI for personal learning purposes.",
       tech: ["React", "Redux Toolkit", "RTK Query", "Node.js", "Express.js", "MongoDB", "Stripe"],
       tools: ["VS Code", "Git", "Postman", "Cloudinary"], // extra tools used
-      img: img2,
+      img: imgmern,
       link: "https://example.com/ecommerce",
       textColor: "text-fuchsia-600", // heading text color
       spanColor: "bg-fuchsia-600",   // hover span background
       spanTitle: "MERN Ecommerce App",
       lineColor: "#4caf50"           // timeline line color
     },
-    {
-      id: 2,
-      title: "Task Manager (Fullstack)",
-      desc: "Real-time task manager with task assignment, live updates via WebSockets, and a Laravel PHP backend for API handling.",
-      tech: ["React", "Express", "Socket.io", "Laravel", "PHP"],
-      tools: ["VS Code", "Git", "MySQL", "Postman"],
-      img: img1,
-      link: "https://example.com/tasks",
-      textColor: "text-lime-400", // heading text color
-      spanTitle: "Sagrada Madre",
-      spanColor: "bg-lime-400",   // hover span background
-      lineColor: "#f44336"        // timeline line color
-    }
   ]
+  
 
 };
 const socialLinks = {
@@ -75,8 +104,8 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-950 text-gray-100 antialiased">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-80 bg-transparent">
-        <div className="max-w-6xl md:ml-[80px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
-          <div className='w-[50%] ml-3 md:ml-0  sm:w-auto'>
+        <div className="max-w-6xl md:ml-[40px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
+          <div className='w-[50%] flex justify-start  md:ml-0  sm:w-auto'>
             <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
             {/* <p className="text-sm hidden md:block text-gray-400">{data.title} — {data.location}</p> */}
           </div>
@@ -120,7 +149,7 @@ export default function Portfolio() {
 
           {/* Hero Content */}
           <div className="relative md:col-span-2 pr-5 sm:pr-0 z-70 md:px-[80px]">
-            <h2 className="sm:text-5xl text-[30px] xs:text-[35px] md:text-7xl sm:mt-[60px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
+            <h2 className="sm:text-5xl text-[30px] xs:text-[35px] md:text-7xl sm:mt-[60px] md:mt-[100px] font-extrabold leading-tight tracking-tight bg-gradient-to-r from-pink-400 via-purple-400 to-sky-400 bg-clip-text text-transparent drop-shadow-lg">
               Hi, I'm {data.name} 👋
             </h2>
             <p className="mt-4 sm:text-lg md:text-[24px] text-[14px] text-gray-300 max-w-xl">{data.about}</p>
@@ -230,11 +259,15 @@ export default function Portfolio() {
                       <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 blur-lg opacity-70"></div>
 
                       {/* Span */}
-                      <span
-                        className={`absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex`}
+                      {/* Span */}
+                      <a
+                        href={p.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`absolute z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 ${p.spanColor} left-1/2 -translate-x-1/2 top-[-60px] px-2 py-1 text-sm sm:text-base rounded w-max items-center gap-1 after:w-4 after:h-4 after:bg-inherit after:absolute after:left-1/2 after:-translate-x-1/2 after:rotate-45 after:-bottom-2 hidden sm:flex cursor-pointer`}
                       >
                         {p?.spanTitle}
-                      </span>
+                      </a>
 
                       {/* Image */}
                       <img
