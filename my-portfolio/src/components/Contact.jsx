@@ -157,7 +157,7 @@ function ContactCard() {
 
                 {/* Resume Button */}
                 <a
-                    href="/resume.pdf"
+                    href="/Junaid-resume.pdf"
                     download="Junaid-resume.pdf"
                     className="group w-full inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base"
                 >
