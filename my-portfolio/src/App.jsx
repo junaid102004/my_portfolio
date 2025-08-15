@@ -11,7 +11,7 @@ import Contact from './components/Contact';
 import bgImage from "./uploads/photo-1623479322729-28b25c16b011.avif";
 import MatterBackground from './components/ui/MatterBackground.jsx';
 import Testimonials from './components/Testimonials.jsx';
-import logoImg from "./uploads/WhatsApp Image 2025-08-14 at 13.03.51.png";
+import logoImg from "./uploads/logo.png";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";

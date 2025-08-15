@@ -92,7 +92,7 @@ function ContactCard() {
     return (
         <div className='flex flex-col w-full justify-center items-center'>
             <div id='contact' className="bg-gradient-to-br w-[300px] xs:w-[350px] sm:w-full from-gray-800/60 to-gray-900/60 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 hover:border-white/30">
-                
+
                 {/* Header */}
                 <div className="text-center mb-4 sm:mb-6">
                     <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-3 sm:mb-4 shadow-lg">
@@ -104,7 +104,7 @@ function ContactCard() {
 
                 {/* Contact Methods */}
                 <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
-                    
+
                     {/* Email */}
                     <a
                         href={`mailto:${data.email}`}
@@ -157,13 +157,14 @@ function ContactCard() {
 
                 {/* Resume Button */}
                 <a
-                    href={data.resume}
-                    download
+                    href="/resume.pdf"
+                    download="Junaid-resume.pdf"
                     className="group w-full inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white px-4 sm:px-6 py-3 sm:py-4 rounded-lg sm:rounded-xl font-semibold shadow-lg hover:shadow-xl transform transition-all duration-300 hover:scale-105 active:scale-95 text-sm sm:text-base"
                 >
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
                     Download Resume
                 </a>
+
             </div>
         </div>
     );
@@ -205,23 +206,23 @@ function App() {
                         </div>
                         {/* Experience Timeline */}
                         <div className='flex flex-col w-full justify-center items-center'>
-                        <div className="bg-gradient-to-br flex flex-col justify-center items-center  w-[300px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
-                            <h4 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
-                                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
-                                    <Calendar className="w-4 h-4 text-white" />
-                                </div>
-                                Professional Journey
-                            </h4>
+                            <div className="bg-gradient-to-br flex flex-col justify-center items-center  w-[300px] xs:w-[350px] sm:w-full from-gray-800/40 to-gray-900/40 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-6 lg:p-8 border border-white/10 shadow-2xl">
+                                <h4 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8 flex items-center gap-2 sm:gap-3">
+                                    <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                                        <Calendar className="w-4 h-4 text-white" />
+                                    </div>
+                                    Professional Journey
+                                </h4>
 
-                            <div className="relative">
-                                <div className="absolute hidden md:block left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 opacity-50"></div>
-                                <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-                                    {timelineItems.map((item, index) => (
-                                        <TimelineItem key={index} item={item} index={index} />
-                                    ))}
+                                <div className="relative">
+                                    <div className="absolute hidden md:block left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-blue-500 opacity-50"></div>
+                                    <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+                                        {timelineItems.map((item, index) => (
+                                            <TimelineItem key={index} item={item} index={index} />
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     </div>
 
