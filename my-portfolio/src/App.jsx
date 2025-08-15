@@ -104,7 +104,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-gray-950 text-gray-100 antialiased">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-80 bg-transparent">
-        <div className="max-w-6xl md:ml-[40px]   mx-auto md:px-6 md:py-6 flex items-center justify-between">
+        <div className="max-w-full   md:px-[70px]  flex items-center justify-between">
           <div className='w-[50%] flex justify-start  md:ml-0  sm:w-auto'>
             <img src={data?.logo} className='w-[120px] h-[120px] object-contain' alt="" />
             {/* <p className="text-sm hidden md:block text-gray-400">{data.title} — {data.location}</p> */}
